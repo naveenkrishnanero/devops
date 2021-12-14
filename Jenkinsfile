@@ -15,7 +15,7 @@ pipeline {
      stage('stage2')
      {
          steps {
-             echo 'This is the stage1 variable being printed in stage2 : ${env.stage1_var}'
+             echo "This is the stage1 variable being printed in stage2 : ${env.stage1_var}"
          }
      }
   }
