@@ -18,7 +18,6 @@ parameters
   stages {
     stage('stage 0'){
         steps {
-            try
             if (params.dbname_parameter){
                 echo 'The db parameter is set to be empty retreving value from SSM'
             } else if (params.dbname_ssm == 'dummmy') {
