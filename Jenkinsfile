@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy 
 
-pipeline { {
+pipeline { 
 parameters 
-
+    {
   string(
    name: 'dbname_parameter',
    defaultValue: '',
