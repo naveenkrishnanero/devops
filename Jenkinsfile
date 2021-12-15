@@ -25,7 +25,7 @@ parameters
 }
   agent any
   stages {
-    state('stage -1'){
+    stage('stage -1'){
         steps {
             script {
                 if (!params.singlequote){
@@ -45,7 +45,7 @@ parameters
                 echo 'The db parameter is set to be empty retreving value from SSM'
             } else if (params.dbname_ssm == 'dummy') {
                 echo 'There is no valid value in SSM raise exception'
-                throw new Exception("DB Name is empty in both SSM and PipeLine Paramters")
+                // throw new Exception("DB Name is empty in both SSM and PipeLine Paramters")
             }
             else {
                 echo 'Using the value set by SSM'
