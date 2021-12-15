@@ -4,6 +4,15 @@ pipeline {
 parameters 
     {
   string(
+   name: 'singlequote',
+   defaultValue: ''
+  )
+  string(
+   name: 'doublequote',
+   defaultValue: ""
+ )
+
+  string(
    name: 'dbname_parameter',
    defaultValue: '',
    description: 'Substitute for dbname'
@@ -16,6 +25,19 @@ parameters
 }
   agent any
   stages {
+    state('stage -1'){
+        steps {
+            script {
+                if (!params.singlequote){
+                    echo "Single quotes output is empty"
+                }
+                if (!params.doublequote){
+                    echo "Double Quote output is empty"
+                }
+            }
+        }
+    }
+
     stage('stage 0') {
         steps {
             script { 
