@@ -21,9 +21,9 @@ parameters
             script { 
             if (params.dbname_parameter) {
                 echo 'The db parameter is set to be empty retreving value from SSM'
-            } else if (params.dbname_ssm == 'dummmy') {
+            } else if (params.dbname_ssm == 'dummy') {
                 echo 'There is no valid value in SSM raise exception'
-                // throw new Exception("DB Name is empty in both SSM and PipeLine Paramters")
+                throw new Exception("DB Name is empty in both SSM and PipeLine Paramters")
             }
             else {
                 echo 'Using the value set by SSM'
